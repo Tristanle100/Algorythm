@@ -113,11 +113,11 @@ BEGIN
         BEGIN
                 for j:=1 to TAILLECARRE do
                 BEGIN
-                        write('|');  // les pipes permettent de faire les lignes du carré
+                        write('|');
                         write(care[j,i]:2);
                 END;
                 write('|');
-                writeln(); //permet le saut de ligne au bout du tableau( pour avoir un carré)
+                writeln();
         END;
         Readln;
 
