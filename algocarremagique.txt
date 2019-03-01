@@ -1,0 +1,74 @@
+Programme carre;
+//BUT
+//ENTREE
+//FIN
+
+VAR i,j,k;Entier
+	care:tableau[1..TAILLECARRE,1..TAILLECARRE] D'Entier
+
+
+
+BEGIN
+
+	POUR i de 1 à TAILLECARRE FAIRE
+	POUR j de 1 à TAILLECARRE FAIRE
+	care[i,j]<= O
+	FINPOUR
+	FINPOUR
+
+//numéro 1
+	i<=TAILLECARRE DIV 2 +1
+	j<=TAILLECARRE DIV 2
+		care[i,j]<=1
+
+//BOUCLE
+	POUR k de 2 à (TAILLECARRE*TAILLECARRE) FAIRE
+		j<=j-1
+		i<=i+1
+
+		SI j=0 ALORS
+			j=TAILLECARRE
+			FINSI
+
+		SI i=TAILLECARRE+1 ALORS
+			i<=1
+			FINSI
+
+//SI LA CASE EST VIDE ====> NORD-EST
+	SI (care[i,j]=0) ALORS
+		SI i=TAILLECARRE+1 ALORS
+			I<=1
+			FINSI
+		care[i,j]<=k
+		SI j=0 ALORS
+			j=TAILLECARRE
+			FINSI
+		FINSI
+	SINON
+		i<=i-1
+		j<=j-1
+			SI j=0 ALORS
+				j<=TAILLECARRE
+				FINSI
+			SI i=0 then
+				i<=TAILLECARRE
+				FINSI
+			SI i=TAILLECARRE+1 then
+				i<=1
+				FINSI
+		care[i,j]<=k
+	FINPOUR
+
+//faire apparaitre le carré
+			POUR i de 1 à TAILLECARRE FAIRE
+				POUR j de 1 à TAILLECARRE FAIRE 
+					ECRIRE("|")
+					ECRIRE(care[j,i]:2)
+				FINPOUR
+				ECRIRE("|")
+				ECRIRE("")
+		LIRE("")
+FIN
+
+
+
